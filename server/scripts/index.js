@@ -19,7 +19,7 @@ io.on('connection', function (socket) {
     // primary room joining
     socket.on('join', function (room) {
         socket.join(room);
-
+        console.log('Somone just joined ' + room);
         // establish channels
         socket.on('connection', function (message) {
             socket.broadcast.to(room).emit('connection', message);
