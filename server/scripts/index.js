@@ -17,9 +17,14 @@ const io = socketIO(server);
 io.on('connection', function (socket) {
 
     // primary room joining
-    socket.on('join', function (room) {
+    socket.on('join', function (joiner) {
+        
+        const room = joiner.room;
+        console.log('A ' + joiner.client + ' joined ' + room);
         socket.join(room);
-        console.log('Somone just joined ' + room);
+
+        
+
         // establish channels
         socket.on('connection', function (message) {
             socket.broadcast.to(room).emit('connection', message);

@@ -13,5 +13,8 @@ const setupHostScreen = function () {
 };
 
 const createRoom = function () {
-    socket.emit('join', roomCode);
+    socket.emit('join', {
+        'room': roomCode,
+        'client': 'desktop'
+    });
 };
