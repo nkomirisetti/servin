@@ -1,5 +1,6 @@
 const express = require('express');
 const socketIO = require('socket.io');
+
 const path = require('path');
 
 const PORT = process.env.PORT || 3000;
@@ -18,16 +19,28 @@ io.on('connection', function (socket) {
 
     // primary room joining
     socket.on('join', function (joiner) {
-        
-        const room = joiner.room;
-        console.log('A ' + joiner.client + ' joined ' + room);
-        socket.join(room);
 
         
+
+        const room = joiner.room;
+        socket.join(room);
+        
+        let playerInfo;
+
+        console.log('A ' + joiner.client + ' joined ' + room);
 
         // establish channels
-        socket.on('connection', function (message) {
-            socket.broadcast.to(room).emit('connection', message);
+        socket.on('connection', function (player) {
+            socket.broadcast.to(room).emit('connection', player);
+            playerInfo = message;
+        });
+   
+        socket.on('disconnect', function () {
+            console.log('A ' + joiner.client + ' left ' + room);
+            socket.broadcast.to(room).emit('left', playerInfo);
+
+            // add case for HOST leave
+            // add case for MOBILE leave
         });
     });
 });

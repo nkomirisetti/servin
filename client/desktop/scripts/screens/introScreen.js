@@ -23,3 +23,5 @@ const desktopSetup = function () {
     titleContainer.fadeOut(1).delay(1000).fadeIn(2000, 'linear');
     rootContainer.append(titleContainer);
 };
+
+// TODO add background music, potentially to a music class

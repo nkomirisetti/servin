@@ -91,8 +91,7 @@ body {
 .mainContainer {
   z-index: 4;
   position: absolute;
-  margin: auto;
-  text-align: center;
+  /* margin: auto; */
   padding-top: 5vh;
   padding-left: 5vw;
   padding-right: 5vw;
@@ -108,6 +107,7 @@ body {
   font-size: 10vh;
   font-family: 'Montserrat', sans-serif;
   color: whitesmoke;
+  text-align: center;
 }
 
 .subText {
@@ -128,4 +128,32 @@ button {
   cursor:pointer;
   margin-top: 10vh;
   font-family: 'Montserrat', sans-serif;
+}
+
+.playerDisplay {
+  margin: 1.25vw;
+  margin-top: .5vw;
+  display: inline-block;
+  align-content: center;
+  text-align: center;
+  width: 12vw;
+}
+
+.playerDisplay img {
+  width: 10vw;
+    animation: shake 3s;
+    animation-iteration-count: infinite;
+  
+}
+
+@keyframes shake {
+  0% {transform: rotate(10deg);}
+  50% {transform: rotate(-10deg);}
+  100% {transform: rotate(10deg);}
+}
+
+.playerDisplay > * {
+  font-family: 'Lobster', cursive;
+  color: whitesmoke;
+  font-size: 4vh;
 }
