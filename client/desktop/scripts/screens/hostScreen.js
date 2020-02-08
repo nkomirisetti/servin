@@ -6,14 +6,14 @@ const setupHostScreen = function () {
     rootContainer.empty();
 
     let mainContainer = $('<div class="mainContainer"></div>');
-    mainContainer.append('<div class="mainText">Go To localhost:3000 on your phone and enter ' + roomCode + '</div>');
+    mainContainer.append('<div class="mainTextDesktop">Go To localhost:3000 on your phone and enter ' + roomCode + '</div>');
     mainContainer.css('display', 'none');
     mainContainer.fadeIn(2000, 'linear');
 
     rootContainer.append(mainContainer);
 
     let playersDiv = $('<div class ="playersList"></div>');
-    mainContainer.append('<div class=\'subText\'>Players Joined:</div>');
+    mainContainer.append('<div class=\'subTextDesktop\'>Players Joined:</div>');
     mainContainer.append(playersDiv);
 
     socket.on('connection', function (player) {

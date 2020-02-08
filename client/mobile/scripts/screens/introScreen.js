@@ -1,13 +1,16 @@
-const desktopSetup = function () {
+const mobileSetup = function () {
     let rootContainer = $('#rootContainer');
 
     let titleContainer = $(`
         <div class="titleContainer">
-            <div class="titleTextDesktop">Let's Start Servin'</div>
-            <div class="subTextDesktop">All you need is a laptop, a phone, and friends!</div>
+            <div class="titleTextMobile">Let's Start Servin'</div>
         </div>`);
 
-    let proceedButton = $('<button id="startButton">START PLAYING</button>');
+    titleContainer.append('<input type="text" id="gameCodeEntry" class="textBox" placeholder="Game Code">');
+    titleContainer.append('<br>');
+    titleContainer.append('<input type="text" id="playerNameEntry" class="textBox" placeholder="Player Name">');
+    titleContainer.append('<br>');
+    let proceedButton = $('<button id="startButton">Next</button>');
     proceedButton.click(function () {
         titleContainer.fadeOut(1500, function(){
             setupHostScreen();

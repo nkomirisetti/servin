@@ -19,12 +19,9 @@ io.on('connection', function (socket) {
 
     // primary room joining
     socket.on('join', function (joiner) {
-
-        
-
         const room = joiner.room;
         socket.join(room);
-        
+
         let playerInfo;
 
         console.log('A ' + joiner.client + ' joined ' + room);
@@ -34,13 +31,14 @@ io.on('connection', function (socket) {
             socket.broadcast.to(room).emit('connection', player);
             playerInfo = message;
         });
-   
+
         socket.on('disconnect', function () {
             console.log('A ' + joiner.client + ' left ' + room);
-            socket.broadcast.to(room).emit('left', playerInfo);
-
-            // add case for HOST leave
-            // add case for MOBILE leave
+            if (joiner.client === 'desktop') {
+                socket.broadcast.to(room).emit('host-left', playerInfo);   // add case for HOST leave
+            } else {
+                socket.broadcast.to(room).emit('mobile-left', playerInfo);   // add case for MOBILE leave
+            }
         });
     });
 });
