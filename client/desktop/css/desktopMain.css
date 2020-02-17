@@ -18,7 +18,7 @@
   color: whitesmoke;
 }
 
-.playerDisplay {
+.playerDisplayDesktop {
   margin: 1.25vw;
   margin-top: .5vw;
   display: inline-block;
@@ -27,20 +27,14 @@
   width: 12vw;
 }
 
-.playerDisplay img {
+.playerDisplayDesktop img {
   width: 10vw;
     animation: shake 3s;
     animation-iteration-count: infinite;
   
 }
 
-@keyframes shake {
-  0% {transform: rotate(10deg);}
-  50% {transform: rotate(-10deg);}
-  100% {transform: rotate(10deg);}
-}
-
-.playerDisplay > * {
+.playerDisplayDesktop > * {
   font-family: 'Lobster', cursive;
   color: whitesmoke;
   font-size: 4vh;

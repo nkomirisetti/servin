@@ -16,18 +16,19 @@ const setupHostScreen = function () {
     mainContainer.append('<div class=\'subTextDesktop\'>Players Joined:</div>');
     mainContainer.append(playersDiv);
 
-    socket.on('connection', function (player) {
+    socket.on('new-player', function (player) {
         players.push(player);
         playersDiv.append(createPlayerIcon(player));
+        socket.emit('acknowledge-player', player);
 
-        socket.on('left', function(player){
+        socket.on('mobile-left', function (player) {
             $('#' + player.uniqueID).remove();
-            const index = players.findIndex(function(item, i){
+            const index = players.findIndex(function (item, i) {
                 return item.uniqueID === player.uniqueID;
             });
-            players.splice(index,1);
+            players.splice(index, 1);
         });
-          
+
     });
 
     createRoom();
@@ -42,7 +43,7 @@ const createRoom = function () {
 
 const createPlayerIcon = function (player) {
     const photoURL = 'shared/assets/animals/' + player.icon + '.png';
-    let newPlayer = $('<div class=\'playerDisplay\' id=' + player.uniqueID+'><img src="' + photoURL + '" ></img><div>' + player.userName + '</div></div>');
+    let newPlayer = $('<div class=\'playerDisplayDesktop\' id=' + player.uniqueID + '><img src="' + photoURL + '" ></img><div>' + player.userName + '</div></div>');
     return newPlayer;
 };
 

@@ -28,16 +28,21 @@ io.on('connection', function (socket) {
 
         // establish channels
         socket.on('connection', function (player) {
-            socket.broadcast.to(room).emit('connection', player);
-            playerInfo = message;
+            socket.broadcast.to(room).emit('new-player', player);
+            console.log(player);
+            playerInfo = player;
+        });
+
+        socket.on('acknowledge-player', function (player) {
+            socket.broadcast.to(room).emit('acknowledge', player);
         });
 
         socket.on('disconnect', function () {
             console.log('A ' + joiner.client + ' left ' + room);
             if (joiner.client === 'desktop') {
-                socket.broadcast.to(room).emit('host-left', playerInfo);   // add case for HOST leave
+                socket.broadcast.to(room).emit('host-left', playerInfo);
             } else {
-                socket.broadcast.to(room).emit('mobile-left', playerInfo);   // add case for MOBILE leave
+                socket.broadcast.to(room).emit('mobile-left', playerInfo);
             }
         });
     });

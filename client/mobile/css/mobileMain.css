@@ -4,3 +4,31 @@
     color: whitesmoke;  
 }
 
+.mainTextMobile {
+    font-size: 10vw;
+    font-family: 'Lobster', cursive;
+    color: whitesmoke;  
+    text-align: center;
+}
+
+.playerDisplayMobile {
+    margin: 1.25vw;
+    margin-top: .5vw;
+    display: inline-block;
+    align-content: center;
+    text-align: center;
+    width: 25vw;
+  }
+  
+  .playerDisplayMobile img {
+    width: 23vw;
+      animation: shake 3s;
+      animation-iteration-count: infinite;
+    
+  }
+  
+  .playerDisplayMobile > * {
+    font-family: 'Lobster', cursive;
+    color: whitesmoke;
+    font-size: 4vh;
+  }

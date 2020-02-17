@@ -1,6 +1,7 @@
 const mobileSetup = function () {
     let rootContainer = $('#rootContainer');
-
+    rootContainer.empty();
+    
     let titleContainer = $(`
         <div class="titleContainer">
             <div class="titleTextMobile">Let's Start Servin'</div>
@@ -12,9 +13,18 @@ const mobileSetup = function () {
     titleContainer.append('<br>');
     let proceedButton = $('<button id="startButton">Next</button>');
     proceedButton.click(function () {
-        titleContainer.fadeOut(1500, function(){
-            setupHostScreen();
-        });
+
+        if ($.trim($('#playerNameEntry').val()) == '') {
+            alert('Make sure you enter a valid name!');
+        } else if (!($('#gameCodeEntry').val().match(/^[A-Za-z]+$/) && $('#gameCodeEntry').val().length == 4)) {
+            alert('Make sure your gamecode is valid!');
+        } else {
+            myName = $.trim($('#playerNameEntry').val()).trim().toLowerCase();
+            myGameCode = $('#gameCodeEntry').val().trim().toUpperCase();
+            titleContainer.fadeOut(2000, 'linear').delay(1000).queue(function () {
+                setupPlayerSelectScreen();
+            });
+        }
     });
 
     $('#backgroundContainer').append(`
