@@ -31,7 +31,7 @@ const setupHostScreen = function () {
         });
     });
 
-    socket.on('game-starting', function (startingPlayer) {
+    socket.on('room-starting', function (startingPlayer) {
         mainContainer.stop().fadeOut(3000, function() {
             setupLevelSelectScreen();
         });

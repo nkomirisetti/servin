@@ -19,7 +19,7 @@ const youreInScreen = function () {
         socket.off('room-starting');
         titleContainer.stop().fadeOut(1000);
         
-        // open game selection screen
+        //TODO open game selection screen
 
     });
 };

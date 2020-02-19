@@ -45,5 +45,10 @@ io.on('connection', function (socket) {
                 socket.broadcast.to(room).emit('mobile-left', playerInfo);
             }
         });
+
+        socket.on('start-room', function(startingPlayer) {
+            console.log('room is starting!');
+            socket.broadcast.to(room).emit('starting-room', startingPlayer);
+        });
     });
 });
