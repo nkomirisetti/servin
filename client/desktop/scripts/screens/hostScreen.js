@@ -1,5 +1,3 @@
-var roomCode = roomCodeGenerator(4);
-var players = [];
 
 const setupHostScreen = function () {
     let rootContainer = $('#rootContainer');
@@ -22,14 +20,18 @@ const setupHostScreen = function () {
         socket.emit('acknowledge-player', player);
 
         socket.on('mobile-left', function (player) {
-            $('#' + player.uniqueID).remove();
-            const index = players.findIndex(function (item, i) {
-                return item.uniqueID === player.uniqueID;
+            $('#' + player.uniqueID).fadeOut(1000, function () {
+                $('#' + player.uniqueID).remove();
+                const index = players.findIndex(function (item, i) {
+                    return item.uniqueID === player.uniqueID;
+                });
+                players.splice(index, 1);
             });
-            players.splice(index, 1);
         });
 
     });
+
+
 
     createRoom();
 };
@@ -44,6 +46,7 @@ const createRoom = function () {
 const createPlayerIcon = function (player) {
     const photoURL = 'shared/assets/animals/' + player.icon + '.png';
     let newPlayer = $('<div class=\'playerDisplayDesktop\' id=' + player.uniqueID + '><img src="' + photoURL + '" ></img><div>' + player.userName + '</div></div>');
+    newPlayer.fadeOut(0).fadeIn(1000);
     return newPlayer;
 };
 
