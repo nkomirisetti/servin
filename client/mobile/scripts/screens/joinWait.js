@@ -38,9 +38,11 @@ const setupJoinScreen = function () {
             console.log('heck yeah!');
             console.log(titleContainer);
             // TODO figure out fade out
-            youreInScreen();
+            titleContainer.stop().fadeOut(1000, function() {
+                socket.off('acknowledge');
+                youreInScreen();
+            });
 
-            socket.off('acknowledge');
         }
     });
 

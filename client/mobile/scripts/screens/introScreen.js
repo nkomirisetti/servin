@@ -11,7 +11,7 @@ const mobileSetup = function () {
     titleContainer.append('<br>');
     titleContainer.append('<input type="text" id="playerNameEntry" class="textBox" placeholder="Player Name">');
     titleContainer.append('<br>');
-    let proceedButton = $('<button id="startButton">Next</button>');
+    let proceedButton = $('<button>Next</button>');
     proceedButton.click(function () {
 
         if ($.trim($('#playerNameEntry').val()) == '') {
