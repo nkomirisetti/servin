@@ -35,9 +35,7 @@ const setupJoinScreen = function () {
         if (playerInfo.uniqueID === myUniqueID) {
             hostLeftMobile();
             // add code for room join
-            console.log('heck yeah!');
-            console.log(titleContainer);
-            // TODO figure out fade out
+
             titleContainer.stop().fadeOut(1000, function() {
                 socket.off('acknowledge');
                 youreInScreen();

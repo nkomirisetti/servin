@@ -11,6 +11,7 @@ const mobileSetup = function () {
     titleContainer.append('<br>');
     titleContainer.append('<input type="text" id="playerNameEntry" class="textBox" placeholder="Player Name">');
     titleContainer.append('<br>');
+    
     let proceedButton = $('<button>Next</button>');
     proceedButton.click(function () {
 
@@ -32,6 +33,7 @@ const mobileSetup = function () {
         <div class="second"></div>
         <div class="third"></div>
     `);
+    
     titleContainer.append(proceedButton);
     titleContainer.fadeOut(1).delay(1000).fadeIn(2000, 'linear');
     rootContainer.append(titleContainer);

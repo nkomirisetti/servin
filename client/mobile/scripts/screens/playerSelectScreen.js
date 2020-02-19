@@ -20,7 +20,6 @@ const setupPlayerSelectScreen = function () {
 };
 
 const playerSelected = function (chosenSprite) {
-    console.log('That\'s a ' + chosenSprite);
     let flag = false;
     $('.playerDisplayMobile:not(#' + chosenSprite + ')').fadeTo(1500, 0.01).delay(1500).queue(function () {
         if (!flag) {
