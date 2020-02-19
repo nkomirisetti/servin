@@ -25,4 +25,5 @@ const youreInScreen = function () {
     titleContainer.append(startButton);
     titleContainer.fadeOut(0).delay(500).fadeIn(3000);
 
+    
 };

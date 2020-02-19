@@ -3,7 +3,7 @@ const setupHostScreen = function () {
     rootContainer.empty();
 
     let mainContainer = $('<div class="mainContainer"></div>');
-    mainContainer.append('<div class="mainTextDesktop">Go To localhost:3000 on your phone and enter ' + roomCode + '</div>');
+    mainContainer.append('<div class="mainTextDesktop">Go To ' + global_url + ' on your phone and enter ' + roomCode + '</div>');
     mainContainer.css('display', 'none');
     mainContainer.fadeIn(2000, 'linear');
 
@@ -32,7 +32,7 @@ const setupHostScreen = function () {
     });
 
     socket.on('room-starting', function (startingPlayer) {
-        mainContainer.stop().fadeOut(3000, function() {
+        mainContainer.stop().fadeOut(3000, function () {
             setupLevelSelectScreen();
         });
     });
