@@ -14,9 +14,10 @@ const youreInScreen = function () {
 
     rootContainer.append(titleContainer);
     socket.on('room-starting', function(starterID) {
+        console.log('starting the game');
         socket.off('room-starting');
         titleContainer.stop().fadeOut(1000);
-        
+        rootContainer.empty();
         //TODO open game selection screen
 
     });
