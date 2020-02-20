@@ -21,7 +21,26 @@ const setupHostScreen = function () {
         });
     });
 
+    // TODO move this code somewhere else so players can join during the game	
+    socket.on('new-player', function (player) {
+        console.log(player);
+        players.push(player);
+        playersDiv.append(createPlayerIcon(player));
+        socket.emit('acknowledge-player', player);
+    });
+
+    socket.on('mobile-left', function (player) {
+        $('#' + player.uniqueID).fadeOut(1000, function () {
+            $('#' + player.uniqueID).remove();
+            const index = players.findIndex(function (item, i) {
+                return item.uniqueID === player.uniqueID;
+            });
+            players.splice(index, 1);
+        });
+    });
+
     createRoom();
+
 };
 
 const createRoom = function () {
