@@ -16,6 +16,7 @@ const setupHostScreen = function () {
 
     // TODO move this code somewhere else so players can join during the game
     socket.on('new-player', function (player) {
+        console.log(player);
         players.push(player);
         playersDiv.append(createPlayerIcon(player));
         socket.emit('acknowledge-player', player);
@@ -33,7 +34,7 @@ const setupHostScreen = function () {
 
     socket.on('room-starting', function (startingPlayer) {
         mainContainer.stop().fadeOut(3000, function () {
-            setupLevelSelectScreen();
+            setupLevelSelectScreen(startingPlayer);
         });
     });
 
@@ -63,6 +64,5 @@ const playerTest = function (iconName) {
         'icon': iconName
     };
 
-    players.push(player);
     $('.playersList').append(createPlayerIcon(player));
 };
