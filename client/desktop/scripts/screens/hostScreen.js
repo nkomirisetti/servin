@@ -1,4 +1,6 @@
 const setupHostScreen = function () {
+    currentScreen = 'host';
+
     let rootContainer = $('#rootContainer');
     rootContainer.empty();
 
@@ -12,25 +14,6 @@ const setupHostScreen = function () {
     let playersDiv = $('<div class ="playersList"></div>');
     mainContainer.append('<div class=\'subTextDesktop\'>Players Joined:</div>');
     mainContainer.append(playersDiv);
-
-
-    // TODO move this code somewhere else so players can join during the game
-    socket.on('new-player', function (player) {
-        console.log(player);
-        players.push(player);
-        playersDiv.append(createPlayerIcon(player));
-        socket.emit('acknowledge-player', player);
-    });
-
-    socket.on('mobile-left', function (player) {
-        $('#' + player.uniqueID).fadeOut(1000, function () {
-            $('#' + player.uniqueID).remove();
-            const index = players.findIndex(function (item, i) {
-                return item.uniqueID === player.uniqueID;
-            });
-            players.splice(index, 1);
-        });
-    });
 
     socket.on('room-starting', function (startingPlayer) {
         mainContainer.stop().fadeOut(3000, function () {

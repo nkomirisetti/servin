@@ -1,10 +1,10 @@
-const setupLevelWaitScreen = function (pickingPlayerId) {
+const setupLevelSelectScreen = function (pickingPlayerId) {
     let rootContainer = $('#rootContainer');
     rootContainer.empty();
 
     let mainContainer = $('<div class="mainContainer"></div>');
     mainContainer.append('<div class=\'mainTextDesktop\'>Waiting for ' + getPlayer(pickingPlayerId).userName + ' to pick a game</div>');
-    
+
     mainContainer.css('display', 'none');
     mainContainer.fadeIn(2000, 'linear');
 
@@ -12,5 +12,8 @@ const setupLevelWaitScreen = function (pickingPlayerId) {
 
     let messagesList = $('<div class ="messagesList"></div>');
     mainContainer.append(messagesList);
-    // TODO add messages list
+
+    socket.on('recieve-message', function (message) {
+        // TODO add messages list
+    });
 };

@@ -48,7 +48,7 @@ io.on('connection', function (socket) {
 
         socket.on('start-room', function(startingPlayer) {
             console.log('Room is starting!');
-            socket.broadcast.to(room).emit('room-starting', startingPlayer);
+            io.to(room).emit('room-starting', startingPlayer);
         });
     });
 });
