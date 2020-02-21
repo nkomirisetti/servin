@@ -14,11 +14,6 @@ const desktopSetup = function () {
         });
     });
 
-    $('#backgroundContainer').append(`
-        <div class="first"></div>
-        <div class="second"></div>
-        <div class="third"></div>
-    `);
     titleContainer.append(proceedButton);
     titleContainer.fadeOut(1).delay(1000).fadeIn(2000, 'linear');
     rootContainer.append(titleContainer);

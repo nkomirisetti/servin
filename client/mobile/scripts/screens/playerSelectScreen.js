@@ -15,13 +15,14 @@ const setupPlayerSelectScreen = function () {
     }
 
     mainContainer.append(playerContainers);
-    mainContainer.fadeOut(1).fadeIn(2000, 'linear');
+    mainContainer.fadeOut(0).fadeIn(2000, 'linear');
+    
     rootContainer.append(mainContainer);
 };
 
 const playerSelected = function (chosenSprite) {
     let flag = false;
-    $('.playerDisplayMobile:not(#' + chosenSprite + ')').fadeTo(1500, 0.01).delay(1500).queue(function () {
+    $('.playerDisplayMobile:not(#' + chosenSprite + ')').fadeTo(1500, 0.001).delay(1500).queue(function () {
         if (!flag) {
             flag = true;
             $('.mainContainer').fadeOut(2000, 'linear', function () {

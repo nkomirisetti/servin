@@ -22,9 +22,8 @@ const youreInScreen = function () {
     startButton.click(function () {
         socket.emit('start-room',myUniqueID);
     });
-
-    rootContainer.append(titleContainer);
-
     titleContainer.append(startButton);
-    titleContainer.fadeOut(0).delay(500).fadeIn(3000);    
+    
+    titleContainer.fadeOut(0).delay(500).fadeIn(3000); 
+    rootContainer.append(titleContainer);
 };
