@@ -4,9 +4,9 @@ const setupHostScreen = function () {
     let rootContainer = $('#rootContainer');
     rootContainer.empty();
 
-    let mainContainer = $('<div class="mainContainer"></div>');
+    let mainContainer = $('<div class=\'mainContainer\'></div>');
 
-    mainContainer.append('<div class="mainTextDesktop">Go To ' + global_url + ' on your phone and enter ' + roomCode + '</div>');
+    mainContainer.append('<div class=\'mainTextDesktop\'>Go To ' + global_url + ' on your phone and enter ' + roomCode + '</div>');
     mainContainer.append('<div class=\'subTextDesktop\'>Players Joined:</div>');
     mainContainer.append('<div id=\'playersDiv\' class =\'playersList\'></div>');
 

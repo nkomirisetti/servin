@@ -3,12 +3,12 @@ const mobileSetup = function () {
     rootContainer.empty();
 
     let titleContainer = $(`
-        <div class="titleContainer">
-            <div class="titleTextMobile">Let's Start Servin'</div>
+        <div class='titleContainer'>
+            <div class='titleTextMobile'>Let's Start Servin'</div>
         </div>`);
 
-    titleContainer.append('<input type="text" id="gameCodeEntry" class="textBox" placeholder="Game Code"><br>');
-    titleContainer.append('<input type="text" id="playerNameEntry" class="textBox" placeholder="Player Name"><br>');
+    titleContainer.append('<input type=\'text\' id=\'gameCodeEntry\' class=\'textBox\' placeholder=\'Game Code\'><br>');
+    titleContainer.append('<input type=\'text\' id=\'playerNameEntry\' class=\'textBox\' placeholder=\'Player Name\'><br>');
 
     let proceedButton = $('<button>Next</button>');
     proceedButton.click(function () {

@@ -2,12 +2,12 @@ const desktopSetup = function () {
     let rootContainer = $('#rootContainer');
 
     let titleContainer = $(`
-        <div class="titleContainer">
-            <div class="titleTextDesktop">Let's Start Servin'</div>
-            <div class="subTextDesktop">All you need is a laptop, a phone, and friends!</div>
+        <div class='titleContainer'>
+            <div class='titleTextDesktop'>Let's Start Servin'</div>
+            <div class='subTextDesktop'>All you need is a laptop, a phone, and friends!</div>
         </div>`);
 
-    let proceedButton = $('<button id="startButton">START PLAYING</button>');
+    let proceedButton = $('<button id=\'startButton\'>START PLAYING</button>');
     proceedButton.click(function () {
         titleContainer.fadeOut(1500, function(){
             setupHostScreen();

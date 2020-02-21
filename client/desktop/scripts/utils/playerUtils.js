@@ -14,7 +14,7 @@ const findPlayerIndex = function(player) {
 
 const createPlayerIcon = function (player) {
     const photoURL = 'shared/assets/animals/' + player.icon + '.png';
-    let newPlayer = $('<div class=\'playerDisplayDesktop\' id=' + player.uniqueID + '><img src="' + photoURL + '" ></img><div>' + player.userName + '</div></div>');
+    let newPlayer = $('<div class=\'playerDisplayDesktop\' id=' + player.uniqueID + '><img src=\'' + photoURL + '\' ></img><div>' + player.userName + '</div></div>');
     newPlayer.fadeOut(0).fadeIn(1000);
     return newPlayer;
 };

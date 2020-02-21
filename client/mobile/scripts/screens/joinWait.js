@@ -3,11 +3,11 @@ const setupJoinScreen = function () {
     rootContainer.empty();
 
     let titleContainer = $(`
-    <div class="titleContainer">
-        <div class="titleTextMobile">Lookin' for the host</div>
+    <div class='titleContainer'>
+        <div class='titleTextMobile'>Lookin' for the host</div>
     </div>`);
 
-    let proceedButton = $('<button id="startButton">Quit</button>');
+    let proceedButton = $('<button id=\'startButton\'>Quit</button>');
     proceedButton.click(function () {
         location.reload();
     });

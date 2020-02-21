@@ -3,8 +3,8 @@ const youreInScreen = function () {
     rootContainer.empty();
     
     let titleContainer = $(`
-    <div class="titleContainer">
-        <div class="titleTextMobile">Once everyone is in, hit start!</div>
+    <div class='titleContainer'>
+        <div class='titleTextMobile'>Once everyone is in, hit start!</div>
     </div>`);
 
     socket.on('room-starting', function(startingPlayer) {
