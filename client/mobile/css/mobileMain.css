@@ -32,3 +32,9 @@
   color: whitesmoke;
   font-size: 4vh;
 }
+
+.playersListMobile {
+  height: 86vh;
+  overflow: auto;
+  margin-left: 3vw;
+}

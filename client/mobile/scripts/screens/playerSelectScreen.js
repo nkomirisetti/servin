@@ -8,14 +8,14 @@ const setupPlayerSelectScreen = function () {
             <div class='mainTextMobile'>Pick a Friend!</div>
         </div>`);
 
-    let playerContainers = $('<div id=\'playersList\'></div>');
+    let playerContainers = $('<div id=\'playersList\' class=\'playersListMobile\'></div>');
 
     for (let i = 0; i < animalsList.length; i++) {
         playerContainers.append('<div class=\'playerDisplayMobile\' id=\'' + animalsList[i] + '\' onclick=\'playerSelected("' + animalsList[i] + '")\'><img src=\'shared/assets/animals/' + animalsList[i] + '.png\'>');
     }
 
     mainContainer.append(playerContainers);
-    mainContainer.fadeOut(0).fadeIn(2000, 'linear');
+    mainContainer.fadeOut(0).fadeIn(3000, 'linear');
 
     rootContainer.append(mainContainer);
 };
