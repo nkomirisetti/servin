@@ -27,14 +27,14 @@ io.on('connection', function (socket) {
         console.log('A ' + joiner.client + ' joined ' + room);
 
         // establish channels
-        socket.on('connection', function (player) {
+        socket.on('join-room', function (player) {
             socket.broadcast.to(room).emit('new-player', player);
             console.log(player);
             playerInfo = player;
         });
 
         socket.on('acknowledge-player', function (player) {
-            socket.broadcast.to(room).emit('acknowledge', player);
+            socket.broadcast.to(room).emit('acknowledged', player);
         });
 
         socket.on('disconnect', function () {
@@ -42,13 +42,18 @@ io.on('connection', function (socket) {
             if (joiner.client === 'desktop') {
                 socket.broadcast.to(room).emit('host-left', playerInfo);
             } else {
-                socket.broadcast.to(room).emit('mobile-left', playerInfo);
+                socket.broadcast.to(room).emit('player-left', playerInfo);
             }
         });
 
-        socket.on('start-room', function(startingPlayer) {
+        socket.on('start-room', function (startingPlayer) {
             console.log('Room is starting!');
             io.to(room).emit('room-starting', startingPlayer);
+        });
+
+        socket.on('driver-change', function (newDriver) {
+            console.log('Old driver left, choosing ' + newDriver.userName + ' as new driver.');
+            socket.broadcast.to(room).emit('driver-change', newDriver);
         });
     });
 });

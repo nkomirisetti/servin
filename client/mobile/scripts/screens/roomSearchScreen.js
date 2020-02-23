@@ -22,18 +22,17 @@ const setupJoinScreen = function () {
     myUniqueID = roomCodeGenerator(5);
 
     titleContainer.fadeOut(0).fadeIn(2000, 'linear').queue(function () {
-        socket.emit('connection',buildInfoJSON());
+        socket.emit('join-room',buildInfoJSON());
     });
 
-    socket.on('acknowledge', function (playerInfo) {
-        if (playerInfo.uniqueID === myUniqueID) {
+    socket.on('acknowledged', function (playerInfo) {
+        if (playerInfo[0].uniqueID === myUniqueID) {
             hostLeftMobile();
-
+            socket.off('acknowledged');
+            console.log(playerInfo);
+            myDriver = playerInfo[1];
             titleContainer.stop().fadeOut(1000, function() {
-                socket.off('acknowledge');
-
-                // TODO add code for being driver
-                youreInScreen();
+                createWaitScreen();
             });
         }
     });

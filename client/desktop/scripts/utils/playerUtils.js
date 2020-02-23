@@ -1,4 +1,4 @@
-const getPlayer = function (playerID) {
+const getPlayerByID = function (playerID) {
     for (let i = 0; i < players.length; i++) {
         if (playerID === players[i].uniqueID){
             return players[i];
@@ -6,9 +6,15 @@ const getPlayer = function (playerID) {
     }
 };
 
-const findPlayerIndex = function(player) {
+const getIndexByPlayer = function(player) {
     return players.findIndex(function (item, i) {
         return item.uniqueID === player.uniqueID;
+    });
+};
+
+const getIndexByID = function(playerID) {
+    return players.findIndex(function (item, i) {
+        return item.uniqueID === playerID;
     });
 };
 

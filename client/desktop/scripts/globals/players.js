@@ -1,4 +1,4 @@
 var roomCode = roomCodeGenerator(4);
 var players = [];
 var currentScreen = 'start';
-var controllingPlayer = '';
+var drivingPlayerIndex = -1;

@@ -2,6 +2,7 @@ var myName;
 var myUniqueID;
 var mySprite;
 var myGameCode;
+var myDriver;
 
 const buildInfoJSON = function () {
     return {
@@ -11,4 +12,8 @@ const buildInfoJSON = function () {
         'uniqueID': myUniqueID,
         'icon': mySprite
     };
+};
+
+const amIDriver = function() {
+    return myUniqueID === myDriver.uniqueID;
 };

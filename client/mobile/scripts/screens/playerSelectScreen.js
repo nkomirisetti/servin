@@ -11,7 +11,7 @@ const setupPlayerSelectScreen = function () {
     let playerContainers = $('<div id=\'playersList\'></div>');
 
     for (let i = 0; i < animalsList.length; i++) {
-        playerContainers.append('<div class=\'playerDisplayMobile\' id=\'' + animalsList[i] + '\' onclick=\'playerSelected(\'' + animalsList[i] + '\')\'><img src=\'shared/assets/animals/' + animalsList[i] + '.png\'>');
+        playerContainers.append('<div class=\'playerDisplayMobile\' id=\'' + animalsList[i] + '\' onclick=\'playerSelected("' + animalsList[i] + '")\'><img src=\'shared/assets/animals/' + animalsList[i] + '.png\'>');
     }
 
     mainContainer.append(playerContainers);
