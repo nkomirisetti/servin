@@ -18,7 +18,7 @@ const mobileSetup = function () {
         if (validateRoomCodeInput(enteredRoomCode, enteredName)) {
             myName = enteredName;
             myGameCode = enteredRoomCode;
-            
+
             titleContainer.fadeOut(2000, 'linear').delay(1000).queue(function () {
                 setupPlayerSelectScreen();
             });
@@ -27,7 +27,7 @@ const mobileSetup = function () {
 
     titleContainer.append(proceedButton);
     titleContainer.fadeOut(0).delay(1000).fadeIn(2000, 'linear');
-    
+
     rootContainer.append(titleContainer);
 };
 

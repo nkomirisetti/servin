@@ -1,6 +1,6 @@
 var socket;
 
-$(document).ready(function() {
+$(document).ready(function () {
     socket = io();
     const isMobile = isMobileDevice();
     backgroundSetup();

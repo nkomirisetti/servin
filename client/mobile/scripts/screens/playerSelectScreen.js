@@ -16,7 +16,7 @@ const setupPlayerSelectScreen = function () {
 
     mainContainer.append(playerContainers);
     mainContainer.fadeOut(0).fadeIn(2000, 'linear');
-    
+
     rootContainer.append(mainContainer);
 };
 

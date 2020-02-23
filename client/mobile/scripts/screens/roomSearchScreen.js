@@ -22,7 +22,7 @@ const setupJoinScreen = function () {
     myUniqueID = roomCodeGenerator(5);
 
     titleContainer.fadeOut(0).fadeIn(2000, 'linear').queue(function () {
-        socket.emit('join-room',buildInfoJSON());
+        socket.emit('join-room', buildInfoJSON());
     });
 
     socket.on('acknowledged', function (playerInfo) {
@@ -31,7 +31,7 @@ const setupJoinScreen = function () {
             socket.off('acknowledged');
             console.log(playerInfo);
             myDriver = playerInfo[1];
-            titleContainer.stop().fadeOut(1000, function() {
+            titleContainer.stop().fadeOut(1000, function () {
                 createWaitScreen();
             });
         }

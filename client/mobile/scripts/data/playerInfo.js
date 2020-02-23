@@ -14,6 +14,6 @@ const buildInfoJSON = function () {
     };
 };
 
-const amIDriver = function() {
+const amIDriver = function () {
     return myUniqueID === myDriver.uniqueID;
 };

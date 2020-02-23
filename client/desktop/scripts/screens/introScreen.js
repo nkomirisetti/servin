@@ -9,7 +9,7 @@ const desktopSetup = function () {
 
     let proceedButton = $('<button id=\'startButton\'>START PLAYING</button>');
     proceedButton.click(function () {
-        titleContainer.fadeOut(1500, function(){
+        titleContainer.fadeOut(1500, function () {
             setupHostScreen();
         });
     });

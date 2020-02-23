@@ -12,7 +12,7 @@ const setupHostScreen = function () {
 
     mainContainer.fadeOut(0).fadeIn(2000, 'linear');
     rootContainer.append(mainContainer);
-    
+
     playerSocketConnections();
     createRoom();
 
