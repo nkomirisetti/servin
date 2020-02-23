@@ -27,7 +27,7 @@ const setupJoinScreen = function () {
 
     socket.on('acknowledged', function (playerInfo) {
         if (playerInfo[0].uniqueID === myUniqueID) {
-            hostLeftMobile();
+            playerConnectionManagement();
             socket.off('acknowledged');
             myDriver = playerInfo[1];
             titleContainer.stop().fadeOut(1000, function () {

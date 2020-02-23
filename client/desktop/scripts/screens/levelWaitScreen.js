@@ -1,6 +1,7 @@
 const setupLevelSelectScreen = function (pickingPlayerId) {
     let rootContainer = $('#rootContainer');
     rootContainer.empty();
+    currentScreen = 'levelSelect';
 
     let mainContainer = $('<div class=\'mainContainer\'></div>');
     mainContainer.append('<div class=\'mainTextDesktop\'>Waiting for ' + getPlayerByID(pickingPlayerId).userName + ' to pick a game</div>');

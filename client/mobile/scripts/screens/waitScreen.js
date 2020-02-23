@@ -26,7 +26,8 @@ const createWaitScreen = function () {
     socket.on('room-starting', function () {
         socket.off('room-starting');
         titleContainer.stop().fadeOut(1000, function () {
-            // TODO add room start code
+            socket.off('driver-change');
+            createLobbyPlayerScreen();
         });
     });
 

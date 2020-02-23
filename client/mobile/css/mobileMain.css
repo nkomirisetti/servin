@@ -38,3 +38,8 @@
   overflow: auto;
   margin-left: 3vw;
 }
+
+.gamesDisplayMobile {
+  width: 90vw;
+  margin-top: 2vh;
+}
