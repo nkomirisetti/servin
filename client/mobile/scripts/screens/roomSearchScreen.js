@@ -29,7 +29,6 @@ const setupJoinScreen = function () {
         if (playerInfo[0].uniqueID === myUniqueID) {
             hostLeftMobile();
             socket.off('acknowledged');
-            console.log(playerInfo);
             myDriver = playerInfo[1];
             titleContainer.stop().fadeOut(1000, function () {
                 createWaitScreen();

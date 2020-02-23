@@ -31,7 +31,6 @@ const createWaitScreen = function () {
     });
 
     socket.on('driver-change', function (newDriver) {
-        console.log('driver-change');
         myDriver = newDriver;
         titleContainer.stop().fadeOut(1000, function () {
             createWaitScreen();

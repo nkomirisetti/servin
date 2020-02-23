@@ -27,7 +27,6 @@ const playerSocketConnections = function () {
             const oldDriverIndex = players[drivingPlayerIndex].uniqueID;
             players.splice(getIndexByID(player.uniqueID), 1);
             if (player.uniqueID === oldDriverIndex) {
-                console.log('choosing new driver');
                 randomNewDriver();
             }
         }
